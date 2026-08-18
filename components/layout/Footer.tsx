@@ -1,0 +1,105 @@
+import { Container } from "@/components/ui/Container";
+import { CONTACT, NAV_LINKS, SITE_NAME, SOCIAL_LINKS } from "@/lib/constants";
+
+export function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="bg-brand-ink text-white/80">
+      <Container className="grid gap-12 py-16 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+        <div className="flex flex-col gap-4">
+          <p className="font-display text-2xl font-semibold text-white">
+            {SITE_NAME} Groupe
+          </p>
+          <p className="max-w-xs text-sm leading-relaxed text-white/60">
+            Agence immobilière nouvelle génération au Maroc. IA, digital et
+            accompagnement humain au service de votre patrimoine.
+          </p>
+          <ul className="mt-2 flex gap-4 text-sm">
+            {SOCIAL_LINKS.map((social) => (
+              <li key={social.label}>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 transition-colors hover:text-brand-pistachio"
+                >
+                  {social.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <nav aria-label="Navigation footer">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+            Navigation
+          </p>
+          <ul className="flex flex-col gap-3 text-sm">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="text-white/70 hover:text-white">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+            Coordonnées
+          </p>
+          <ul className="flex flex-col gap-3 text-sm text-white/70">
+            <li>
+              <a href={CONTACT.phoneHref} className="hover:text-white">
+                {CONTACT.phone}
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${CONTACT.email}`} className="hover:text-white">
+                {CONTACT.email}
+              </a>
+            </li>
+            <li>{CONTACT.city}</li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+            Informations légales
+          </p>
+          <ul className="flex flex-col gap-3 text-sm">
+            <li>
+              <a href="/mentions-legales" className="text-white/70 hover:text-white">
+                Mentions légales
+              </a>
+            </li>
+            <li>
+              <a
+                href="/politique-de-confidentialite"
+                className="text-white/70 hover:text-white"
+              >
+                Politique de confidentialité
+              </a>
+            </li>
+            <li>
+              <a href="/cookies" className="text-white/70 hover:text-white">
+                Cookies
+              </a>
+            </li>
+          </ul>
+        </div>
+      </Container>
+
+      <div className="border-t border-white/10">
+        <Container className="flex flex-col gap-2 py-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {year} {SITE_NAME} Groupe. Tous droits réservés.
+          </p>
+          <p>Fait avec soin au Maroc.</p>
+        </Container>
+      </div>
+    </footer>
+  );
+}

@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  /* ImmoZen brand palette */
+  --color-brand-forest: #06733d;
+  --color-brand-forest-dark: #04502a;
+  --color-brand-pistachio: #a5d232;
+  --color-brand-pistachio-dark: #8ab924;
+  --color-brand-beige: #f5edd8;
+  --color-brand-beige-dark: #e9dcbb;
+  --color-brand-ink: #10120f;
+  --color-brand-anthracite: #21241f;
+  --color-brand-white: #ffffff;
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fade-in 0.6s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-brand-ink);
+    border-color: color-mix(in oklab, var(--color-brand-ink) 10%, transparent);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-brand-white);
+    color: var(--color-brand-ink);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-pistachio);
+    color: var(--color-brand-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-pistachio);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
