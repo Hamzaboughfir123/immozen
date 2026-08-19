@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = buildMetadata({
   title: "Mentions légales",
-  description: "Mentions légales du site ImmoZen, agence immobilière au Maroc.",
+  description: "Mentions légales du site ImmoZen Groupe, agence immobilière au Maroc.",
   alternates: { canonical: "/mentions-legales" },
 });
 
@@ -30,7 +30,7 @@ export default function MentionsLegalesPage() {
 
       <h2>Activité</h2>
       <p>
-        ImmoZen exerce une activité d&apos;intermédiation immobilière au
+        ImmoZen Groupe exerce une activité d&apos;intermédiation immobilière au
         Maroc (transaction, location, conseil). Les informations relatives
         aux autorisations professionnelles et assurances applicables seront
         précisées ici conformément à la réglementation en vigueur.
@@ -39,7 +39,7 @@ export default function MentionsLegalesPage() {
       <h2>Propriété intellectuelle</h2>
       <p>
         L&apos;ensemble des contenus présents sur ce site (textes, visuels,
-        logo, charte graphique) est la propriété d&apos;ImmoZen ou de ses
+        logo, charte graphique) est la propriété d&apos;ImmoZen Groupe ou de ses
         partenaires, sauf mention contraire, et ne peut être reproduit sans
         autorisation préalable.
       </p>

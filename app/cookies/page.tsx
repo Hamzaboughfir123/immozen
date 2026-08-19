@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = buildMetadata({
   title: "Cookies",
-  description: "Informations sur l'utilisation des cookies sur le site ImmoZen.",
+  description: "Informations sur l'utilisation des cookies sur le site ImmoZen Groupe.",
   alternates: { canonical: "/cookies" },
 });
 

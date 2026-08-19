@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = buildMetadata({
   title: "Politique de confidentialité",
   description:
-    "Comment ImmoZen collecte et traite les données personnelles transmises via le site.",
+    "Comment ImmoZen Groupe collecte et traite les données personnelles transmises via le site.",
   alternates: { canonical: "/politique-de-confidentialite" },
 });
 
@@ -13,7 +13,7 @@ export default function PolitiqueConfidentialitePage() {
   return (
     <LegalShell title="Politique de confidentialité" updatedAt="17 août 2026">
       <p>
-        ImmoZen accorde une grande importance à la protection des données
+        ImmoZen Groupe accorde une grande importance à la protection des données
         personnelles de ses visiteurs et prospects propriétaires,
         conformément à la loi n° 09-08 relative à la protection des
         personnes physiques à l&apos;égard du traitement des données à
@@ -51,7 +51,7 @@ export default function PolitiqueConfidentialitePage() {
 
       <h2>Sécurité</h2>
       <p>
-        ImmoZen met en œuvre des mesures raisonnables pour protéger vos
+        ImmoZen Groupe met en œuvre des mesures raisonnables pour protéger vos
         données contre tout accès, modification ou divulgation non autorisés.
       </p>
     </LegalShell>

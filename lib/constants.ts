@@ -1,25 +1,25 @@
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://www.immozen.ma";
 
-export const SITE_NAME = "ImmoZen";
+export const SITE_NAME = "ImmoZen Groupe";
 
 export const CONTACT = {
-  phone: "+41 76 603 77 33",
-  phoneHref: "tel:+41766037733",
-  whatsappHref: "https://wa.me/41766037733",
+  phone: "+212771495105",
+  phoneHref: "tel:+212771495105",
+  whatsappHref: "https://wa.me/212771495105",
   email: "contact@immozengroupe.com",
   city: "Casablanca, Maroc",
 };
 
 export const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://instagram.com/immozen" },
-  { label: "LinkedIn", href: "https://linkedin.com/company/immozen" },
-  { label: "Facebook", href: "https://facebook.com/immozen" },
+  { label: "Instagram", href: "https://www.instagram.com/immozen.groupe" },
+  { label: "LinkedIn", href: "https://linkedin.com/company/immozen-groupe" },
+  { label: "Facebook", href: "https://web.facebook.com/Immozengroupe" },
 ] as const;
 
 export const NAV_LINKS = [
   { label: "Accueil", href: "#accueil" },
-  { label: "Pourquoi ImmoZen", href: "#pourquoi-immozen" },
+  { label: "Pourquoi ImmoZen Groupe", href: "#pourquoi-immozen" },
   { label: "Votre économie", href: "#simulateur" },
   { label: "Nos services", href: "#services" },
   { label: "Confier mon bien", href: "#confier-mon-bien" },

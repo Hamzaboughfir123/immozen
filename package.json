@@ -2,6 +2,9 @@
   "name": "immozen-web",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=22 <25"
+  },
   "description": "ImmoZen - Agence immobilière nouvelle génération au Maroc. Site vitrine premium.",
   "scripts": {
     "dev": "next dev",

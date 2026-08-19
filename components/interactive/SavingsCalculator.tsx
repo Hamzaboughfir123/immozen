@@ -31,7 +31,7 @@ export function SavingsCalculator() {
   return (
     <div className="grid overflow-hidden rounded-[2rem] bg-white shadow-[0_30px_90px_-30px_rgba(16,18,15,0.25)] lg:grid-cols-2">
       {/* Inputs */}
-      <div className="flex flex-col gap-8 p-8 sm:p-12">
+      <div className="flex flex-col gap-5 p-6 sm:p-8">
         <div>
           <label
             htmlFor={valueId}
@@ -94,32 +94,35 @@ export function SavingsCalculator() {
       </div>
 
       {/* Result */}
-      <div className="flex flex-col justify-between gap-8 bg-brand-forest p-8 text-white sm:p-12">
-        <div className="flex flex-col gap-5">
+      <div className="flex flex-col justify-between gap-5 bg-brand-forest p-6 text-white sm:p-8">
+        <div className="flex flex-col gap-3">
           <div className="flex items-center justify-between text-sm text-white/70">
             <span>Commission traditionnelle estimée ({rate.toString().replace(".", ",")} %)</span>
             <span className="font-semibold text-white">{formatMAD(traditionalCommission)}</span>
           </div>
           <div className="flex items-center justify-between text-sm text-white/70">
-            <span>Commission propriétaire ImmoZen</span>
+            <span>Commission propriétaire ImmoZen Groupe</span>
             <span className="font-semibold text-brand-pistachio">0 DH*</span>
           </div>
           <div className="h-px w-full bg-white/15" />
           <div>
-            <p className="text-sm font-medium text-white/70">Économie potentielle</p>
-            <p className="mt-2 font-display text-5xl font-medium text-brand-pistachio tabular-nums">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-pistachio px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-ink">
+              100 % d&rsquo;économie garantie
+            </span>
+            <p className="mt-2 text-sm font-medium text-white/70">Économie potentielle</p>
+            <p className="mt-1 font-display text-4xl font-medium text-brand-pistachio tabular-nums drop-shadow-[0_0_30px_rgba(165,210,50,0.35)]">
               {formatMAD(traditionalCommission)}
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3">
           <Button href="#confier-mon-bien" variant="primary" size="lg" className="w-full">
             Je souhaite vendre sans commission
           </Button>
           <p className="text-xs leading-relaxed text-white/50">
             *Simulation indicative basée sur le taux sélectionné. Les conditions
-            exactes du service ImmoZen seront précisées contractuellement.
+            exactes du service ImmoZen Groupe seront précisées contractuellement.
           </p>
         </div>
       </div>

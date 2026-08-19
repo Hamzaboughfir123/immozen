@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { CONTACT, SITE_NAME, SITE_URL } from "@/lib/constants";
 
 export const DEFAULT_TITLE =
-  "ImmoZen | Vendez ou louez votre bien sans commission propriétaire au Maroc";
+  "ImmoZen Groupe | Vendez ou louez votre bien sans commission propriétaire au Maroc";
 
 export const DEFAULT_DESCRIPTION =
-  "ImmoZen modernise l'immobilier au Maroc grâce à l'IA, au digital et à un accompagnement personnalisé. Confiez-nous votre appartement, villa, terrain, commerce ou riad.";
+  "ImmoZen Groupe modernise l'immobilier au Maroc grâce à l'IA, au digital et à un accompagnement personnalisé. Confiez-nous votre appartement, villa, terrain, commerce ou riad.";
 
 const OG_IMAGE =
   "https://images.unsplash.com/photo-1565020244281-fe53df7df170?w=1200&h=630&fit=crop&q=80";
@@ -22,7 +22,7 @@ export function buildMetadata(overrides: Partial<Metadata> = {}): Metadata {
       "vendre sans commission Maroc",
       "agence immobilière Maroc",
       "louer appartement sans commission",
-      "ImmoZen",
+      "ImmoZen Groupe",
       "vendre villa Maroc",
       "agence immobilière nouvelle génération",
     ],
@@ -41,7 +41,7 @@ export function buildMetadata(overrides: Partial<Metadata> = {}): Metadata {
           url: OG_IMAGE,
           width: 1200,
           height: 630,
-          alt: "ImmoZen — agence immobilière nouvelle génération au Maroc",
+          alt: "ImmoZen Groupe — agence immobilière nouvelle génération au Maroc",
         },
       ],
     },
@@ -73,8 +73,8 @@ export function realEstateAgentJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    name: "ImmoZen",
-    alternateName: "ImmoZen Groupe",
+    name: "ImmoZen Groupe",
+    alternateName: "ImmoZen",
     description: DEFAULT_DESCRIPTION,
     url: SITE_URL,
     telephone: CONTACT.phone,

@@ -16,12 +16,12 @@ export function HeroSection() {
     <section id="accueil" className="relative overflow-hidden bg-brand-ink">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1624804821465-5c7c80f99bd1?w=2400&q=80&auto=format&fit=crop"
-          alt="Villa de style riad avec piscine, arcades et palmiers à Marrakech, symbole du patrimoine immobilier haut de gamme"
+          src="/images/hero-marrakech.jpg"
+          alt="La Koutoubia au coucher du soleil, entourée de palmiers, symbole de Marrakech et du patrimoine immobilier haut de gamme"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_75%]"
+          className="object-cover object-[72%_center] sm:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-ink via-brand-ink/70 to-brand-ink/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-ink/80 via-brand-ink/20 to-transparent" />
@@ -41,14 +41,14 @@ export function HeroSection() {
           </h1>
 
           <p className="mt-5 max-w-xl text-balance text-base leading-relaxed text-white/80 sm:text-lg">
-            Confiez la vente ou la location de votre bien à ImmoZen.
+            Confiez la vente ou la location de votre bien à ImmoZen Groupe.
             <br className="hidden sm:block" /> 0 DH de commission pour le
             propriétaire.*
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Button href="#confier-mon-bien" size="lg">
-              Je confie mon bien à ImmoZen
+              Je confie mon bien à ImmoZen Groupe
             </Button>
             <Button href="#simulateur" variant="outline" size="lg">
               Estimer mon économie

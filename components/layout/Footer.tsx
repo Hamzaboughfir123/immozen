@@ -9,7 +9,7 @@ export function Footer() {
       <Container className="grid gap-12 py-16 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
           <p className="font-display text-2xl font-semibold text-white">
-            {SITE_NAME} Groupe
+            {SITE_NAME}
           </p>
           <p className="max-w-xs text-sm leading-relaxed text-white/60">
             Agence immobilière nouvelle génération au Maroc. IA, digital et
@@ -95,7 +95,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-2 py-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {SITE_NAME} Groupe. Tous droits réservés.
+            © {year} {SITE_NAME}. Tous droits réservés.
           </p>
           <p>Fait avec soin au Maroc.</p>
         </Container>

@@ -45,16 +45,16 @@ export function PropertyTypesSection() {
           title={
             <>
               Un bien à vendre ou à louer ?
-              <br className="hidden sm:block" /> ImmoZen s&rsquo;occupe du reste.
+              <br className="hidden sm:block" /> ImmoZen Groupe s&rsquo;occupe du reste.
             </>
           }
-          description="Vendez. Louez. ImmoZen s'occupe du reste."
+          description="Vendez. Louez. Sans commission, sans stress, sans perdre de temps."
         />
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PROPERTY_TYPES.map((type, index) => (
             <Reveal key={type.name} delay={index * 60}>
-              <div className="group relative aspect-[16/9] overflow-hidden rounded-3xl">
+              <div className="group relative aspect-[16/9] overflow-hidden rounded-3xl ring-1 ring-transparent transition-all duration-300 hover:ring-2 hover:ring-brand-pistachio hover:shadow-[0_20px_55px_-20px_rgba(165,210,50,0.55)]">
                 <Image
                   src={type.image}
                   alt={type.alt}
@@ -68,7 +68,7 @@ export function PropertyTypesSection() {
                   <span className="font-display text-xl font-medium text-white">
                     {type.name}
                   </span>
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:bg-brand-pistachio group-hover:text-brand-ink">
                     <ArrowIcon />
                   </span>
                 </div>
