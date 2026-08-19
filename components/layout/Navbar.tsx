@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { NAV_LINKS, SITE_NAME } from "@/lib/constants";
+import { CONTACT, NAV_LINKS, SITE_NAME } from "@/lib/constants";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -44,7 +44,7 @@ export function Navbar() {
           />
         </a>
 
-        <nav className="hidden items-center gap-9 lg:flex" aria-label="Navigation principale">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Navigation principale">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -56,7 +56,15 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href={CONTACT.phoneHref}
+            className="hidden items-center gap-2 whitespace-nowrap text-sm font-semibold text-brand-forest transition-colors hover:text-brand-forest-dark xl:inline-flex"
+            aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
+          >
+            <PhoneIcon />
+            {CONTACT.phone}
+          </a>
           <Button href="#confier-mon-bien" size="md">
             Confier mon bien
           </Button>
@@ -107,11 +115,33 @@ export function Navbar() {
               </a>
             ))}
           </nav>
+          <a
+            href={CONTACT.phoneHref}
+            onClick={() => setOpen(false)}
+            className="mt-4 flex items-center justify-center gap-2 rounded-full border border-brand-forest/25 px-5 py-3 text-sm font-semibold text-brand-forest"
+          >
+            <PhoneIcon />
+            {CONTACT.phone}
+          </a>
           <Button href="#confier-mon-bien" className="mt-4 w-full" onClick={() => setOpen(false)}>
             Confier mon bien
           </Button>
         </div>
       ) : null}
     </header>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M6.6 3h3l1.5 4.2-2 1.7a15.5 15.5 0 006 6l1.7-2L21 14.4v3c0 2-1.6 3.6-3.6 3.6C9.4 21 3 14.6 3 6.6 3 4.6 4.6 3 6.6 3z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }

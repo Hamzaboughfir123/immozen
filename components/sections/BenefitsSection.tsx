@@ -5,6 +5,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const BENEFITS = [
   {
+    icon: ZeroIcon,
+    title: "0 DH propriétaire",
+    text: "Notre réussite, c'est de vendre votre bien — pas de vous facturer. 0 DH de commission ImmoZen Groupe, selon les conditions applicables.*",
+    highlight: true,
+  },
+  {
     icon: SparkIcon,
     title: "IA & Technologie",
     text: "Nos outils nouvelle génération valorisent votre bien et le placent devant les bons acheteurs, plus vite.",
@@ -22,29 +28,12 @@ const BENEFITS = [
     text: "Un seul interlocuteur, disponible à chaque étape, de la prise de mandat jusqu'à la signature.",
     highlight: false,
   },
-  {
-    icon: ZeroIcon,
-    title: "0 DH propriétaire",
-    text: "Notre réussite, c'est de vendre votre bien — pas de vous facturer. 0 DH de commission ImmoZen Groupe, selon les conditions applicables.*",
-    highlight: true,
-  },
 ];
 
 export function BenefitsSection() {
   return (
     <section id="pourquoi-immozen" className="bg-white py-10 sm:py-14">
       <Container>
-        <Reveal delay={40}>
-          <div className="mb-5 flex flex-wrap items-center gap-4 rounded-2xl bg-brand-forest px-6 py-3.5 shadow-[0_20px_50px_-20px_rgba(6,115,61,0.6)] sm:gap-5">
-            <span className="font-display text-3xl font-bold text-brand-pistachio sm:text-4xl">
-              300+
-            </span>
-            <span className="text-sm font-medium leading-snug text-white/90">
-              agences partenaires réunies dans un même réseau, au Maroc et à l&rsquo;international.
-            </span>
-          </div>
-        </Reveal>
-
         <SectionHeading
           eyebrow="La nouvelle référence de l'immobilier au Maroc"
           title={
