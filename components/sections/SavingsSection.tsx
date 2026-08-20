@@ -11,7 +11,7 @@ export function SavingsSection() {
           align="center"
           eyebrow="Votre économie"
           title="Calculez votre économie en 10 secondes."
-          description="Votre bien vaut cher. Sa vente ne devrait rien vous coûter."
+          description="Votre bien vaut cher. Sa vente ne devrait rien coûter aux propriétaires au Maroc."
           className="mx-auto"
         />
 

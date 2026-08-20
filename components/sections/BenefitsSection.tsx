@@ -42,7 +42,7 @@ export function BenefitsSection() {
               <br className="hidden sm:block" /> Votre agence aussi.
             </>
           }
-          description="ImmoZen Groupe associe la puissance de son réseau, la technologie et un accompagnement humain à la garantie 0 DH de commission pour vous, propriétaire."
+          description="ImmoZen Groupe associe la puissance de son réseau, la technologie et un accompagnement humain à la garantie 0 DH de commission pour vous, propriétaire au Maroc."
         />
 
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
