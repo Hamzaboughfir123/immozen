@@ -1,0 +1,43 @@
+name: Deploy ImmoZen
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+
+            echo "🚀 Déploiement ImmoZen..."
+
+            cd /var/www/immozen
+
+            echo "📥 Récupération du code..."
+            git fetch origin main
+            git reset --hard origin/main
+
+            echo "📦 Installation des dépendances..."
+            npm ci
+
+            echo "🔨 Build Next.js..."
+            npm run build
+
+            echo "♻️ Redémarrage PM2..."
+            pm2 restart immozen
+
+            echo "💾 Sauvegarde PM2..."
+            pm2 save
+
+            echo "✅ Déploiement terminé !"
