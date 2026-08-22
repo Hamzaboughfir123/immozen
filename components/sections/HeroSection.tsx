@@ -44,33 +44,16 @@ export function HeroSection() {
             Confiez la vente ou la location de votre bien à ImmoZen Groupe.
             <br className="hidden sm:block" /> 0 DH de commission pour les
             propriétaires.*
-          </p>
-
-          <div className="mt-5 max-w-xl rounded-2xl border border-white/15 bg-brand-ink/45 p-4 backdrop-blur-md">
-            <div className="flex items-start gap-3">
-              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-pistachio text-brand-ink">
+            <span className="mt-2 flex items-center gap-2 text-sm font-medium text-white/90">
+              <span className="text-brand-pistachio" aria-hidden="true">
                 <LocationIcon />
               </span>
-              <div>
-                <p className="text-sm font-semibold text-white">
-                  Nous intervenons dans les grandes villes du Maroc
-                </p>
-                <div className="mt-2 flex flex-wrap gap-2 text-xs font-semibold">
-                  <span className="rounded-full bg-brand-pistachio px-3 py-1.5 text-brand-ink">
-                    Marrakech · priorité actuelle
-                  </span>
-                  {['Rabat', 'Casablanca', 'Tanger', 'Agadir'].map((city) => (
-                    <span
-                      key={city}
-                      className="rounded-full bg-white/10 px-3 py-1.5 text-white/85 ring-1 ring-inset ring-white/15"
-                    >
-                      {city}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+              <span>
+                <strong className="text-brand-pistachio">Priorité Marrakech</strong>
+                {' · '}Rabat · Casablanca · Tanger · Agadir
+              </span>
+            </span>
+          </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Button href="#confier-mon-bien" size="lg">
