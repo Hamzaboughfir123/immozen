@@ -5,17 +5,17 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function SavingsSection() {
   return (
-    <section id="simulateur" className="bg-brand-beige/50 py-10 sm:py-14">
+    <section id="simulateur" className="savings-section">
       <Container>
         <SectionHeading
-          align="center"
+          align="left"
           eyebrow="Votre économie"
           title="Calculez votre économie en 10 secondes."
           description="Votre bien vaut cher. Sa vente ne devrait rien coûter aux propriétaires au Maroc."
-          className="mx-auto"
+          className="savings-heading"
         />
 
-        <Reveal className="mt-6" delay={100}>
+        <Reveal className="mt-6 sm:mt-8" delay={100}>
           <SavingsCalculator />
         </Reveal>
       </Container>

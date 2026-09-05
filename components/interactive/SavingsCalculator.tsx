@@ -29,27 +29,27 @@ export function SavingsCalculator() {
   }
 
   return (
-    <div className="grid overflow-hidden rounded-[2rem] bg-white shadow-[0_30px_90px_-30px_rgba(16,18,15,0.25)] lg:grid-cols-2">
+    <div className="savings-calculator">
       {/* Inputs */}
-      <div className="flex flex-col gap-5 p-6 sm:p-8">
+      <div className="savings-inputs">
         <div>
           <label
             htmlFor={valueId}
-            className="mb-3 block text-sm font-semibold text-brand-ink/70"
+            className="mb-3 block text-sm font-semibold text-brand-ink"
           >
             Valeur estimée du bien
           </label>
-          <div className="flex items-center gap-3 rounded-2xl border border-brand-ink/10 bg-brand-beige/40 px-5 py-4">
+          <div className="savings-value-field">
             <input
               id={valueId}
               type="text"
               inputMode="numeric"
               value={formatThousands(value)}
               onChange={(e) => handleValueInput(e.target.value)}
-              className="w-full bg-transparent font-display text-2xl font-medium text-brand-ink outline-none"
+              className="min-w-0 w-full bg-transparent font-display text-3xl font-medium text-brand-ink outline-none sm:text-4xl"
               aria-describedby={`${valueId}-suffix`}
             />
-            <span id={`${valueId}-suffix`} className="text-sm font-semibold text-brand-ink/50">
+            <span id={`${valueId}-suffix`} className="text-sm font-bold text-brand-ink/70">
               DH
             </span>
           </div>
@@ -60,7 +60,7 @@ export function SavingsCalculator() {
             step={STEP_VALUE}
             value={Math.min(value, MAX_VALUE)}
             onChange={(e) => setValue(Number(e.target.value))}
-            className="mt-4 w-full accent-brand-forest"
+            className="savings-slider"
             aria-label="Ajuster la valeur du bien avec le curseur"
           />
         </div>
@@ -68,21 +68,21 @@ export function SavingsCalculator() {
         <div>
           <label
             htmlFor={rateId}
-            className="mb-3 block text-sm font-semibold text-brand-ink/70"
+            className="mb-3 block text-sm font-semibold text-brand-ink"
           >
             Taux de commission traditionnel estimé
           </label>
-          <div className="flex flex-wrap gap-2" role="group" aria-labelledby={rateId}>
+          <div className="savings-rates" role="group" aria-labelledby={rateId}>
             {RATE_PRESETS.map((preset) => (
               <button
                 key={preset}
                 type="button"
                 id={preset === DEFAULT_COMMISSION_RATE ? rateId : undefined}
                 onClick={() => setRate(preset)}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                className={`min-h-12 rounded-xl border px-3 py-3 text-sm font-bold transition-colors ${
                   rate === preset
-                    ? "bg-brand-forest text-white"
-                    : "bg-brand-beige/60 text-brand-ink/70 hover:bg-brand-beige"
+                    ? "border-brand-forest bg-brand-forest text-white shadow-sm"
+                    : "border-brand-ink/15 bg-white text-brand-ink/80 hover:border-brand-forest hover:bg-brand-beige/40"
                 }`}
                 aria-pressed={rate === preset}
               >
@@ -94,33 +94,33 @@ export function SavingsCalculator() {
       </div>
 
       {/* Result */}
-      <div className="flex flex-col justify-between gap-5 bg-brand-forest p-6 text-white sm:p-8">
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center justify-between text-sm text-white/70">
+      <div className="savings-result">
+        <div className="flex min-w-0 flex-col gap-4">
+          <div className="savings-comparison">
             <span>Commission traditionnelle estimée ({rate.toString().replace(".", ",")} %)</span>
-            <span className="font-semibold text-white">{formatMAD(traditionalCommission)}</span>
+            <span className="whitespace-nowrap font-semibold text-brand-ink">{formatMAD(traditionalCommission)}</span>
           </div>
-          <div className="flex items-center justify-between text-sm text-white/70">
+          <div className="savings-comparison">
             <span>Commission propriétaire ImmoZen Groupe</span>
-            <span className="font-semibold text-brand-pistachio">0 DH*</span>
+            <span className="whitespace-nowrap font-bold text-brand-forest">0 DH*</span>
           </div>
-          <div className="h-px w-full bg-white/15" />
+          <div className="h-px w-full bg-brand-ink/15" />
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-pistachio px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-ink">
+            <span className="inline-flex rounded-full border border-brand-forest/20 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-forest-dark">
               100 % d&rsquo;économie garantie
             </span>
-            <p className="mt-2 text-sm font-medium text-white/70">Économie potentielle</p>
-            <p className="mt-1 font-display text-4xl font-medium text-brand-pistachio tabular-nums drop-shadow-[0_0_30px_rgba(165,210,50,0.35)]">
+            <p className="mt-4 text-sm font-semibold text-brand-ink/75">Économie potentielle</p>
+            <p className="savings-total font-display tabular-nums">
               {formatMAD(traditionalCommission)}
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col gap-3">
-          <Button href="#confier-mon-bien" variant="primary" size="lg" className="w-full">
+        <div className="flex min-w-0 flex-col gap-4">
+          <Button href="#confier-mon-bien" variant="primary" size="lg" className="min-h-12 w-full whitespace-normal px-4 text-center text-sm">
             Je souhaite vendre sans commission
           </Button>
-          <p className="text-xs leading-relaxed text-white/50">
+          <p className="text-xs leading-relaxed text-brand-ink/65">
             *Simulation indicative basée sur le taux sélectionné. Les conditions
             exactes du service ImmoZen Groupe seront précisées contractuellement.
           </p>

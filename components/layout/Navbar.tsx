@@ -32,15 +32,15 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <Container className="flex h-20 items-center justify-between">
-        <a href="#accueil" className="flex items-center" aria-label={SITE_NAME}>
+      <Container className="flex h-20 items-center justify-between gap-2 max-lg:px-3">
+        <a href="#accueil" className="flex shrink-0 items-center" aria-label={SITE_NAME}>
           <Image
             src="/images/logo.png"
             alt={SITE_NAME}
             width={175}
             height={60}
             priority
-            className="h-9 w-auto rounded-lg sm:h-10"
+            className="h-12 w-auto rounded-lg lg:h-10"
           />
         </a>
 
@@ -70,10 +70,18 @@ export function Navbar() {
           </Button>
         </div>
 
+        <a
+          href={CONTACT.phoneHref}
+          className="ml-auto inline-flex min-h-11 shrink-0 items-center whitespace-nowrap text-xs font-bold tabular-nums text-brand-forest hover:text-brand-forest-dark min-[375px]:text-sm lg:hidden"
+          aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
+        >
+          {CONTACT.phone}
+        </a>
+
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-brand-ink lg:hidden"
+          className="flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-brand-ink lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
@@ -115,14 +123,6 @@ export function Navbar() {
               </a>
             ))}
           </nav>
-          <a
-            href={CONTACT.phoneHref}
-            onClick={() => setOpen(false)}
-            className="mt-4 flex items-center justify-center gap-2 rounded-full border border-brand-forest/25 px-5 py-3 text-sm font-semibold text-brand-forest"
-          >
-            <PhoneIcon />
-            {CONTACT.phone}
-          </a>
           <Button href="#confier-mon-bien" className="mt-4 w-full" onClick={() => setOpen(false)}>
             Confier mon bien
           </Button>

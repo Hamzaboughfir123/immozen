@@ -1,146 +1,84 @@
 import { Button } from "@/components/ui/Button";
-import { Reveal } from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-
-const BENEFITS = [
-  {
-    icon: ZeroIcon,
-    title: "0 DH propriétaire",
-    text: "Notre réussite, c'est de vendre votre bien — pas de vous facturer. 0 DH de commission ImmoZen Groupe, selon les conditions applicables.*",
-    highlight: true,
-  },
-  {
-    icon: SparkIcon,
-    title: "IA & Technologie",
-    text: "Nos outils nouvelle génération valorisent votre bien et le placent devant les bons acheteurs, plus vite.",
-    highlight: false,
-  },
-  {
-    icon: EyeIcon,
-    title: "Visibilité",
-    text: "Votre bien diffusé massivement, là où se trouvent vraiment vos futurs acquéreurs et locataires.",
-    highlight: false,
-  },
-  {
-    icon: HandshakeIcon,
-    title: "Accompagnement",
-    text: "Un seul interlocuteur, disponible à chaque étape, de la prise de mandat jusqu'à la signature.",
-    highlight: false,
-  },
-];
+import Image from "next/image";
 
 export function BenefitsSection() {
   return (
-    <section id="pourquoi-immozen" className="bg-white py-10 sm:py-14">
-      <Container>
-        <SectionHeading
-          eyebrow="La nouvelle référence de l'immobilier au Maroc"
-          title={
-            <>
-              L&rsquo;immobilier change.
-              <br className="hidden sm:block" /> Votre agence aussi.
-            </>
-          }
-          description="ImmoZen Groupe associe la puissance de son réseau, la technologie et un accompagnement humain à la garantie 0 DH de commission pour vous, propriétaire au Maroc."
-        />
+    <section
+      id="pourquoi-immozen"
+      aria-labelledby="benefits-title"
+      className="benefits-campaign"
+    >
+      <Container className="benefits-container">
+        <div className="benefits-main">
+          <div>
+            <p className="benefits-kicker">
+              Vous vendez ou vous louez ?
+            </p>
+            <h2 id="benefits-title" className="benefits-title font-display">
+              Votre bien en lumière.
+              <span className="block text-brand-forest">La commission en moins.</span>
+            </h2>
+            <p className="benefits-description">
+              Donnez envie de visiter. Touchez plus d’acheteurs et de locataires.
+              Et gardez l’esprit tranquille : votre conseiller s’occupe de vous.
+            </p>
+          </div>
 
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {BENEFITS.map((benefit, index) => (
-            <Reveal key={benefit.title} delay={index * 80}>
-              <div
-                className={`group relative h-full overflow-visible rounded-3xl p-5 transition-all duration-300 ${
-                  benefit.highlight
-                    ? "bg-brand-forest text-white shadow-[0_20px_60px_-20px_rgba(6,115,61,0.5)]"
-                    : "bg-brand-beige/60 text-brand-ink hover:bg-brand-beige hover:-translate-y-1 hover:shadow-[0_20px_45px_-24px_rgba(16,18,15,0.35)]"
-                }`}
-              >
-                {benefit.highlight ? (
-                  <span className="absolute -right-3 -top-3 flex h-14 w-14 rotate-12 flex-col items-center justify-center rounded-full border-2 border-dashed border-brand-pistachio bg-brand-ink text-center text-[9px] font-bold uppercase leading-tight text-brand-pistachio shadow-lg">
-                    100%
-                    <br />
-                    garanti
-                  </span>
-                ) : null}
-                <div
-                  className={`mb-3 flex h-10 w-10 items-center justify-center rounded-2xl ${
-                    benefit.highlight
-                      ? "bg-brand-pistachio text-brand-ink"
-                      : "bg-white text-brand-forest"
-                  }`}
-                >
-                  <benefit.icon />
-                </div>
-                <h3 className="font-display text-lg font-semibold">
-                  {benefit.title}
-                </h3>
-                <p
-                  className={`mt-2 text-sm leading-snug ${
-                    benefit.highlight ? "text-white/85" : "text-brand-ink/65"
-                  }`}
-                >
-                  {benefit.text}
+          <div className="benefits-visual relative isolate overflow-hidden rounded-3xl bg-brand-ink text-white">
+            <Image
+              src="/images/property-types/villa.jpg"
+              alt="Piscine et terrasse ensoleillée entourées de verdure"
+              fill
+              sizes="(min-width: 1280px) 560px, (min-width: 1024px) 46vw, 100vw"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-ink via-brand-ink/25 to-transparent" />
+            <div className="benefits-poster relative">
+              <span className="self-start rounded-full bg-brand-beige px-4 py-2 text-xs font-bold uppercase tracking-wide text-brand-forest-dark">
+                Spécial propriétaires
+              </span>
+              <div className="benefits-offer">
+                <p className="flex items-baseline gap-3 text-brand-pistachio">
+                  <span className="benefits-zero font-display font-semibold">0</span>
+                  <span className="benefits-currency font-bold">DH</span>
                 </p>
+                <p className="benefits-offer-caption font-semibold">
+                  de commission<br />pour vous, propriétaire.*
+                </p>
+                <p className="mt-3 text-sm text-white/80">Avec ImmoZen Groupe</p>
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </div>
+
+          <div className="benefits-action">
+            <Button
+              href="#confier-mon-bien"
+              size="lg"
+              className="min-h-12 w-full whitespace-normal text-center sm:w-auto"
+            >
+              Je confie mon bien sans commission
+              <span aria-hidden="true" className="shrink-0 text-xl">↗</span>
+            </Button>
+            <p className="mt-2 text-sm text-brand-ink/70">Votre prochain projet commence ici.</p>
+          </div>
         </div>
 
-        <Reveal className="mt-6 flex justify-center" delay={320}>
-          <Button href="#confier-mon-bien" size="lg">
-            Je confie mon bien à ImmoZen Groupe
-          </Button>
-        </Reveal>
+        <div className="benefits-proof">
+          <p className="text-sm leading-relaxed text-brand-ink/75">
+            <strong className="block font-display text-2xl font-semibold text-brand-forest">300+ agences</strong>
+            Un réseau pour faire rayonner votre bien.
+          </p>
+          <p className="text-sm leading-relaxed text-brand-ink/75">
+            <strong className="mb-1 block text-base font-semibold text-brand-ink">Un bien qui donne envie</strong>
+            Vos atouts mis en avant pour attirer les regards.
+          </p>
+          <p className="text-sm leading-relaxed text-brand-ink/75">
+            <strong className="mb-1 block text-base font-semibold text-brand-ink">Un conseiller à vos côtés</strong>
+            Du premier échange jusqu’à la signature.
+          </p>
+        </div>
       </Container>
     </section>
-  );
-}
-
-function SparkIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2L12 2z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function EyeIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      />
-      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.6" />
-    </svg>
-  );
-}
-
-function HandshakeIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M3 11l4-4 4 3 4-3 4 4M7 10l4 5 4-5M5 12l-2 3 3 3M19 12l2 3-3 3"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ZeroIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M8 16L16 8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
   );
 }
