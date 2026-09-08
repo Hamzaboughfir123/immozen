@@ -46,7 +46,7 @@ export function HeroSection() {
           <p>Confiez la vente ou la location de votre bien à ImmoZen Groupe.</p>
           <div className="hero-location">
             <span className="shrink-0 text-brand-pistachio"><LocationIcon /></span>
-            <p><strong className="text-brand-pistachio">Priorité Marrakech</strong> · Rabat · Casablanca · Tanger · Agadir</p>
+            <p><strong className="text-brand-pistachio">Marrakech</strong></p>
           </div>
         </div>
 
