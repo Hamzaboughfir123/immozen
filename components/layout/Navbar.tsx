@@ -40,7 +40,7 @@ export function Navbar() {
             width={175}
             height={60}
             priority
-            className="h-12 w-auto rounded-lg lg:h-10"
+            className="h-auto w-[100px] rounded-lg min-[375px]:w-[120px] sm:w-[140px] lg:h-10 lg:w-auto"
           />
         </a>
 
@@ -109,7 +109,7 @@ export function Navbar() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-brand-ink/10 bg-white px-6 pb-8 pt-4 lg:hidden"
+          className="max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-brand-ink/10 bg-white px-6 pb-8 pt-4 lg:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Navigation mobile">
             {NAV_LINKS.map((link) => (
