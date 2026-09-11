@@ -1,5 +1,12 @@
 import { Container } from "@/components/ui/Container";
-import { CONTACT, NAV_LINKS, SITE_NAME, SOCIAL_LINKS } from "@/lib/constants";
+import {
+  CONTACT,
+  GROUP_URL,
+  NAV_LINKS,
+  NETWORK_SITES,
+  SITE_NAME,
+  SOCIAL_LINKS,
+} from "@/lib/constants";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -91,6 +98,29 @@ export function Footer() {
           </ul>
         </div>
       </Container>
+
+      <div className="border-t border-white/10">
+        <Container className="py-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+            ImmoZen au Maroc
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            {NETWORK_SITES.map((site) => (
+              <li key={site.href}>
+                <a href={site.href} className="text-white/60 hover:text-white">
+                  {site.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-xs text-white/40">
+            <a href={GROUP_URL} className="text-white/60 hover:text-white">
+              ImmoZen Groupe
+            </a>{" "}
+            — Réseau immobilier du groupe ImmoZen
+          </p>
+        </Container>
+      </div>
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-2 py-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
