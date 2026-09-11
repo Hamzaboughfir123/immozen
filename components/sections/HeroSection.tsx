@@ -9,7 +9,7 @@ export function HeroSection() {
     <section id="accueil" className="relative overflow-hidden bg-brand-ink">
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-marrakech-sans-mosquee.png"
+          src="/images/hero-marrakech-sans-mosquee.webp"
           alt="Panorama de Marrakech et de ses palmiers au coucher du soleil"
           fill
           priority
@@ -23,7 +23,7 @@ export function HeroSection() {
       <Container className="hero-layout relative">
         <span className="hero-eyebrow">
           <span>Agence immobilière</span>{" "}
-          <span>nouvelle génération · Maroc</span>
+          <span>nouvelle génération · Marrakech</span>
         </span>
 
         <h1 className="hero-title font-display font-semibold text-white">

@@ -1,0 +1,31 @@
+# ImmoZen Groupe
+
+> Agence immobilière à Marrakech pour les propriétaires : vente et location
+> d'appartements, villas, riads, terrains, commerces et immeubles, avec 0 DH
+> de commission propriétaire (selon les conditions applicables).
+
+ImmoZen Groupe accompagne les propriétaires immobiliers, avec Marrakech comme
+zone d'intervention prioritaire. Le site s'adresse aux propriétaires qui
+souhaitent vendre ou louer leur bien sans payer de commission d'agence.
+
+## Offre principale
+
+- 0 DH de commission pour le propriétaire, à la vente comme à la location,
+  selon les conditions applicables.
+- Biens pris en charge : appartement, villa, riad, terrain, commerce, immeuble.
+- Réseau de 300+ agences partenaires pour diffuser les biens confiés.
+
+## Pages
+
+- Accueil (présentation, simulateur d'économie, FAQ, prise de contact) : /
+- Mentions légales : /mentions-legales
+- Politique de confidentialité : /politique-de-confidentialite
+- Cookies : /cookies
+
+## Contact
+
+- Téléphone / WhatsApp : +212 775 918 796
+- Email : contact@immozengroupe.com
+
+Ce fichier est informatif et ne garantit aucun classement ou citation par un
+moteur de recherche ou une IA générative.

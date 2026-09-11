@@ -44,7 +44,7 @@ export function PropertyTypesSection() {
           eyebrow="Nos services"
           title={
             <>
-              Un bien à vendre ou à louer ?
+              Un bien à vendre ou à louer à Marrakech ?
               <br className="hidden sm:block" /> ImmoZen Groupe s&rsquo;occupe du reste.
             </>
           }

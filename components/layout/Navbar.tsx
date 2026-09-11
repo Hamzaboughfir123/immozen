@@ -33,16 +33,25 @@ export function Navbar() {
       }`}
     >
       <Container className="flex h-20 items-center justify-between gap-2 max-lg:px-3">
-        <a href="#accueil" className="flex shrink-0 items-center" aria-label={SITE_NAME}>
-          <Image
-            src="/images/logo.png"
-            alt={SITE_NAME}
-            width={175}
-            height={60}
-            priority
-            className="h-auto w-[100px] rounded-lg min-[375px]:w-[120px] sm:w-[140px] lg:h-10 lg:w-auto"
-          />
-        </a>
+        <div className="flex min-w-0 shrink items-center gap-2">
+          <a href="#accueil" className="flex shrink-0 items-center" aria-label={SITE_NAME}>
+            <Image
+              src="/images/logo.webp"
+              alt={SITE_NAME}
+              width={175}
+              height={60}
+              className="h-auto w-[120px] rounded-lg min-[375px]:w-[135px] sm:w-[140px] lg:h-10 lg:w-auto"
+            />
+          </a>
+
+          <a
+            href={CONTACT.phoneHref}
+            className="inline-flex min-h-11 min-w-0 items-center whitespace-nowrap text-[11px] font-bold tabular-nums text-brand-forest hover:text-brand-forest-dark min-[375px]:text-xs lg:hidden"
+            aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
+          >
+            {CONTACT.phone}
+          </a>
+        </div>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Navigation principale">
           {NAV_LINKS.map((link) => (
@@ -69,14 +78,6 @@ export function Navbar() {
             Confier mon bien
           </Button>
         </div>
-
-        <a
-          href={CONTACT.phoneHref}
-          className="ml-auto inline-flex min-h-11 shrink-0 items-center whitespace-nowrap text-xs font-bold tabular-nums text-brand-forest hover:text-brand-forest-dark min-[375px]:text-sm lg:hidden"
-          aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
-        >
-          {CONTACT.phone}
-        </a>
 
         <button
           type="button"

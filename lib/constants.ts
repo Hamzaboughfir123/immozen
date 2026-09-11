@@ -1,5 +1,6 @@
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://www.immozen.ma";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
+  "https://www.immozenmarrakech.com";
 
 export const SITE_NAME = "ImmoZen Groupe";
 
@@ -22,6 +23,7 @@ export const NAV_LINKS = [
   { label: "Pourquoi ImmoZen Groupe", href: "#pourquoi-immozen" },
   { label: "Votre économie", href: "#simulateur" },
   { label: "Nos services", href: "#services" },
+  { label: "FAQ", href: "#faq" },
   { label: "Confier mon bien", href: "#confier-mon-bien" },
 ] as const;
 

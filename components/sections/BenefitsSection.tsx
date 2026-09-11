@@ -11,7 +11,7 @@ export function BenefitsSection() {
   return (
     <section id="pourquoi-immozen" aria-labelledby="benefits-title" className="owners-campaign">
       <div className="owners-reference" aria-hidden="true">
-        <Image src="/images/owners-campaign.png" alt="" width={2007} height={783} sizes="100vw" unoptimized className="owners-reference-image" />
+        <Image src="/images/owners-campaign.webp" alt="" width={2007} height={783} sizes="100vw" loading="lazy" className="owners-reference-image" />
       </div>
       <div className="owners-content">
         <p className="owners-kicker">Propriétaires au Maroc</p>
