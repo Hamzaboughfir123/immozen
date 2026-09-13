@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { OpenPropertyLeadButton } from "@/components/property-lead/OpenPropertyLeadButton";
 import Image from "next/image";
 
 const PROPERTY_KINDS = ["Appartement", "Villa", "Terrain", "Commerce", "Riad", "Immeuble"];
@@ -51,7 +52,7 @@ export function HeroSection() {
         </div>
 
         <div className="hero-actions">
-          <Button href="#confier-mon-bien" size="lg">Je confie mon bien à ImmoZen Groupe</Button>
+          <OpenPropertyLeadButton size="lg">Je confie mon bien à ImmoZen Groupe</OpenPropertyLeadButton>
           <Button href="#simulateur" variant="outline" size="lg">Estimer mon économie</Button>
         </div>
 

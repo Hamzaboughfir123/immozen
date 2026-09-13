@@ -8,6 +8,7 @@ import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { OwnerLeadSection } from "@/components/sections/OwnerLeadSection";
 import { PropertyTypesSection } from "@/components/sections/PropertyTypesSection";
 import { SavingsSection } from "@/components/sections/SavingsSection";
+import { PropertyLeadModal } from "@/components/property-lead/PropertyLeadModal";
 import { faqJsonLd } from "@/lib/seo";
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
       </main>
       <Footer />
       <MobileStickyCta />
+      <PropertyLeadModal />
     </>
   );
 }

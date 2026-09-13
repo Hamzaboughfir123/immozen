@@ -1,4 +1,5 @@
-﻿import Image from "next/image";
+﻿import { OwnersCtaTrigger } from "@/components/property-lead/OwnersCtaTrigger";
+import Image from "next/image";
 
 const benefits = [
   { icon: "◎", title: "0 DH propriétaire", text: "Notre réussite, c’est de vendre votre bien — pas de vous facturer. 0 DH de commission ImmoZen Groupe, selon les conditions applicables.*" },
@@ -30,7 +31,7 @@ export function BenefitsSection() {
         <ul className="owners-reassurance"><li>Sûr et transparent</li><li>Gain de temps</li><li>Meilleure rentabilité</li></ul>
         <p className="owners-signature">Ensemble, votre projet avance !</p>
       </div>
-      <a className="owners-cta" href="#confier-mon-bien"><span>Je confie mon bien à ImmoZen Groupe</span><span aria-hidden="true">→</span></a>
+      <OwnersCtaTrigger><span>Je confie mon bien à ImmoZen Groupe</span><span aria-hidden="true">→</span></OwnersCtaTrigger>
     </section>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
+import { openPropertyLeadModal } from "@/components/property-lead/lead-modal-events";
 import { DEFAULT_COMMISSION_RATE } from "@/lib/constants";
 import { formatMAD, formatThousands } from "@/lib/utils";
 import { useId, useMemo, useState } from "react";
@@ -117,7 +118,12 @@ export function SavingsCalculator() {
         </div>
 
         <div className="flex min-w-0 flex-col gap-4">
-          <Button href="#confier-mon-bien" variant="primary" size="lg" className="min-h-12 w-full whitespace-normal px-4 text-center text-sm">
+          <Button
+            onClick={() => openPropertyLeadModal()}
+            variant="primary"
+            size="lg"
+            className="min-h-12 w-full whitespace-normal px-4 text-center text-sm"
+          >
             Je souhaite vendre sans commission
           </Button>
           <p className="text-xs leading-relaxed text-brand-ink/65">
