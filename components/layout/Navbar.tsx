@@ -37,11 +37,11 @@ export function Navbar() {
         <div className="flex min-w-0 shrink items-center gap-2">
           <a href="#accueil" className="flex shrink-0 items-center" aria-label={SITE_NAME}>
             <Image
-              src="/images/logo.webp"
+              src="/images/logo-vert-fonce.webp"
               alt={SITE_NAME}
               width={175}
               height={60}
-              className="h-auto w-[120px] rounded-lg min-[375px]:w-[135px] sm:w-[140px] lg:h-10 lg:w-auto"
+              className="h-auto w-[130px] rounded-lg min-[375px]:w-[145px] sm:w-[150px] lg:h-11 lg:w-auto"
             />
           </a>
 

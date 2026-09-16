@@ -92,7 +92,7 @@ export function realEstateAgentJsonLd() {
     description: DEFAULT_DESCRIPTION,
     url: SITE_URL,
     image: `${SITE_URL}${OG_IMAGE}`,
-    logo: `${SITE_URL}/images/logo.webp`,
+    logo: `${SITE_URL}/images/logo-vert-fonce.webp`,
     telephone: CONTACT.phone,
     email: CONTACT.email,
     areaServed: [

@@ -593,40 +593,146 @@
   }
 }
 
-/* Original campaign artwork on desktop, readable HTML on small screens. */
-.owners-campaign { position: relative; background: #fff; scroll-margin-top: 5rem; }
-.owners-reference-image { display: block; width: 100%; height: auto; }
-.owners-content { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.owners-cta { position: absolute; left: 36.85%; top: 85.5%; width: 31.8%; height: 10.6%; border-radius: 999px; }
-.owners-cta > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-.owners-cta:hover { background: rgb(255 255 255 / .12); }
-.owners-cta:focus-visible { outline: 3px solid #005b2d; outline-offset: 4px; }
-@media (max-width: 767px) {
-  .owners-campaign { padding: 2rem 1rem; background: radial-gradient(ellipse at top right, #e8f3d9, transparent 55%), #fffefa; }
-  .owners-reference { display: none; }
-  .owners-content { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip-path: none; white-space: normal; }
-  .owners-kicker { display: inline-block; padding: .5rem 1rem; border-radius: 999px; background: #c9f268; color: #003e22; font-size: .8rem; font-weight: 800; text-transform: uppercase; box-shadow: 0 5px 15px #acd74b40; }
-  .owners-content h2 { margin-top: 1rem; font-family: var(--font-sans); font-size: clamp(2rem, 7.8vw, 3.5rem); font-weight: 900; line-height: 1.05; letter-spacing: -.055em; }
-  .owners-content h2 span { display: block; color: #005c2d; }
-  .owners-intro { margin-top: 1rem; font-size: 1rem; line-height: 1.6; }
-  .owners-intro strong { color: #005c2d; }
-  .owners-cards { display: grid; gap: 1rem; margin-top: 1.75rem; }
-  .owners-card { position: relative; padding: 1.25rem; border: 2px solid #fff; border-radius: 1.5rem; background: #faf7ef; box-shadow: 0 10px 28px #006f3610; }
-  .owners-card-featured { background: linear-gradient(135deg, #00532b, #00813d); color: #fff; box-shadow: 0 12px 30px #006f3630; }
-  .owners-icon { display: grid; place-items: center; width: 3rem; height: 3rem; margin-bottom: .75rem; border-radius: 50%; background: #006735; color: white; font-size: 2rem; }
-  .owners-card-featured .owners-icon { background: #b7e22c; color: #00532b; }
-  .owners-guarantee { position: absolute; right: 1rem; top: -.75rem; padding: 1rem .75rem; border-radius: 50%; background: #cdf06a; color: #071b0d; font-weight: 900; text-align: center; line-height: 1.2; }
-  .owners-card h3 { font-family: var(--font-sans); font-size: 1.25rem; font-weight: 800; letter-spacing: -.04em; }
-  .owners-card p { margin-top: .5rem; line-height: 1.55; }
-  .owners-reassurance { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-top: 1.5rem; font-size: .8rem; color: #00532b; }
-  .owners-reassurance li::before { content: '✓ '; font-weight: 800; }
-  .owners-signature { margin-top: 1rem; text-align: center; font-style: italic; color: #00532b; }
-  .owners-cta { position: static; display: flex; align-items: center; justify-content: center; gap: .75rem; width: 100%; height: auto; min-height: 3.5rem; margin-top: 1.25rem; padding: .9rem 1.1rem; background: #acdd19; color: #071b0d; font-size: .95rem; font-weight: 800; text-align: center; box-shadow: 0 8px 22px #acdd1938; }
-  .owners-cta > span { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
-  .owners-cta:hover { background: #bce834; }
+/* Benefits campaign: photo and copy remain separate, responsive elements. */
+.owners-campaign {
+  scroll-margin-top: 5rem;
+  padding: clamp(1.25rem, 3svh, 2rem) 1.25rem;
+  background: radial-gradient(ellipse at 90% 0%, #e3f2dc, transparent 45%), #fffefa;
 }
-@media (min-width: 540px) and (max-width: 767px) { .owners-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-
+.owners-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(.8rem, 2svh, 1.5rem);
+  width: min(100%, 1360px);
+  margin-inline: auto;
+}
+.owners-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+.owners-kicker {
+  display: inline-block;
+  padding: .4rem .8rem;
+  border-radius: 999px;
+  background: #d7f09d;
+  color: #04502a;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.owners-heading h2 {
+  max-width: 16ch;
+  margin-top: clamp(.6rem, 1.5svh, 1rem);
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, min(4.2vw, 6svh), 4rem);
+  font-weight: 850;
+  line-height: 1.04;
+  letter-spacing: -.055em;
+}
+.owners-heading h2 span { color: #06733d; }
+.owners-intro {
+  max-width: 55ch;
+  margin-top: clamp(.5rem, 1.3svh, .9rem);
+  color: #4d5b50;
+  font-size: clamp(.9rem, 1.2vw, 1.08rem);
+  line-height: 1.45;
+}
+.owners-visual { position: relative; min-width: 0; padding-left: 3.5rem; }
+.owners-visual-image {
+  position: relative;
+  height: clamp(9rem, 27svh, 18rem);
+  overflow: hidden;
+  border-radius: 1.4rem;
+  box-shadow: 0 16px 40px #064b2c24;
+}
+.owners-visual-image img { object-position: center 55%; }
+.owners-zero {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: clamp(6.5rem, 12vw, 10rem);
+  aspect-ratio: 1;
+  padding: .75rem;
+  transform: translateY(-50%) rotate(-7deg);
+  border: 3px solid #06733d;
+  border-radius: 50%;
+  background: #fffefa;
+  color: #04502a;
+  text-align: center;
+  box-shadow: 0 10px 28px #064b2c24;
+}
+.owners-zero strong { font-size: clamp(1.65rem, 3vw, 3rem); font-weight: 900; letter-spacing: -.07em; line-height: 1; }
+.owners-zero span { margin-top: .3rem; font-size: clamp(.55rem, .8vw, .8rem); font-weight: 800; line-height: 1.15; text-transform: uppercase; }
+.owners-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(.65rem, 1.2vw, 1.2rem);
+}
+.owners-card {
+  min-width: 0;
+  padding: clamp(1rem, min(1.8vw, 2svh), 1.65rem);
+  border: 1px solid #dce9d8;
+  border-radius: 1.35rem;
+  background: #fff;
+  box-shadow: 0 12px 30px #064b2c0d;
+}
+.owners-card-featured { border-color: #06733d; background: linear-gradient(135deg, #04502a, #06733d); color: #fff; }
+.owners-number { color: #06733d; font-size: .8rem; font-weight: 800; }
+.owners-card-featured .owners-number { color: #c9ef79; }
+.owners-card h3 {
+  margin-top: clamp(.5rem, 1svh, .9rem);
+  font-size: clamp(1rem, 1.45vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.15;
+}
+.owners-card p { margin-top: .5rem; color: #4d5b50; font-size: clamp(.8rem, 1vw, .95rem); line-height: 1.4; }
+.owners-card-featured p { color: #e4f1e8; }
+.owners-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.owners-reassurance { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; color: #04502a; font-size: .8rem; font-weight: 700; }
+.owners-reassurance li::before { content: '✓'; margin-right: .4rem; font-weight: 900; }
+.owners-cta {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 3.25rem;
+  padding: .75rem 1.5rem;
+  border-radius: 999px;
+  background: #acdd19;
+  color: #071b0d;
+  font-weight: 800;
+  transition: background .2s ease, transform .2s ease;
+}
+.owners-cta:hover { background: #bce834; transform: translateY(-2px); }
+.owners-cta:focus-visible { outline: 3px solid #005b2d; outline-offset: 4px; }
+@media (min-width: 768px) {
+  .owners-campaign { height: calc(100svh - 5rem); }
+  .owners-content { height: 100%; }
+}
+@media (max-width: 767px) {
+  .owners-campaign { padding-block: 3rem; }
+  .owners-top { grid-template-columns: 1fr; }
+  .owners-heading h2 { font-size: clamp(2.15rem, 8vw, 3.5rem); }
+  .owners-visual { padding-left: 2rem; }
+  .owners-visual-image { height: 13rem; }
+  .owners-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .owners-bottom { flex-direction: column; align-items: stretch; }
+  .owners-cta { width: 100%; }
+}
+@media (max-width: 540px) {
+  .owners-cards { grid-template-columns: 1fr; }
+  .owners-reassurance { display: none; }
+}
 /* Savings campaign: generous typography and a contrasting live result. */
 .savings-section {
   position: relative;

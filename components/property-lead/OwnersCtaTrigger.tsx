@@ -2,14 +2,7 @@
 
 import { openPropertyLeadModal } from "./lead-modal-events";
 
-/**
- * Lien "Confier mon bien" générique (texte, ou zone cliquable invisible
- * positionnée par-dessus le bouton dessiné dans owners-campaign.webp — voir
- * .owners-cta dans globals.css, le cas d'usage d'origine). Reste un
- * <a href="#confier-mon-bien"> pour un repli correct sans JS (scroll vers la
- * section propriétaire, avec appel/WhatsApp) ; avec JS, ouvre directement la
- * modale du formulaire.
- */
+/** Bouton de la section propriétaires ouvrant le formulaire de contact. */
 export function OwnersCtaTrigger({
   children,
   className = "owners-cta",
