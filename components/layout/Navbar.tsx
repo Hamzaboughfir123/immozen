@@ -27,53 +27,49 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 shadow-[0_1px_0_0_rgba(16,18,15,0.06)] backdrop-blur-md"
-          : "bg-transparent"
-      }`}
+      className={`site-header sticky top-0 z-50 w-full ${scrolled ? "site-header-scrolled" : ""}`}
     >
-      <Container className="flex h-20 items-center justify-between gap-2 max-lg:px-3">
-        <div className="flex min-w-0 shrink items-center gap-2">
-          <a href="#accueil" className="flex shrink-0 items-center" aria-label={SITE_NAME}>
+      <Container className="site-header-inner">
+        <div className="site-header-brand">
+          <a href="#accueil" className="site-logo-link" aria-label={SITE_NAME}>
             <Image
-              src="/images/logo-vert-fonce.webp"
+              src="/images/logo-transparent-noir.png"
               alt={SITE_NAME}
-              width={175}
-              height={60}
-              className="h-auto w-[130px] rounded-lg min-[375px]:w-[145px] sm:w-[150px] lg:h-11 lg:w-auto"
+              width={2138}
+              height={735}
+              className="site-logo"
             />
           </a>
 
           <a
             href={CONTACT.phoneHref}
-            className="inline-flex min-h-11 min-w-0 items-center whitespace-nowrap text-[11px] font-bold tabular-nums text-brand-forest hover:text-brand-forest-dark min-[375px]:text-xs lg:hidden"
+            className="site-phone site-phone-mobile lg:hidden"
             aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
           >
-            {CONTACT.phone}
+            <span>{CONTACT.phone}</span>
           </a>
         </div>
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Navigation principale">
+        <nav className="site-desktop-nav hidden items-center lg:flex" aria-label="Navigation principale">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-brand-ink/75 transition-colors hover:text-brand-forest"
+              className="site-nav-link"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="site-header-actions hidden items-center lg:flex">
           <a
             href={CONTACT.phoneHref}
-            className="hidden items-center gap-2 whitespace-nowrap text-sm font-semibold text-brand-forest transition-colors hover:text-brand-forest-dark xl:inline-flex"
+            className="site-phone hidden xl:inline-flex"
             aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
           >
             <PhoneIcon />
-            {CONTACT.phone}
+            <span>{CONTACT.phone}</span>
           </a>
           <Button onClick={() => openPropertyLeadModal()} size="md">
             Confier mon bien
@@ -83,7 +79,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-brand-ink lg:hidden"
+          className="site-menu-toggle flex items-center justify-center lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
@@ -111,7 +107,7 @@ export function Navbar() {
       {open ? (
         <div
           id="mobile-nav"
-          className="max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-brand-ink/10 bg-white px-6 pb-8 pt-4 lg:hidden"
+          className="site-mobile-panel max-h-[calc(100dvh-6rem)] overflow-y-auto overscroll-contain lg:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Navigation mobile">
             {NAV_LINKS.map((link) => (
