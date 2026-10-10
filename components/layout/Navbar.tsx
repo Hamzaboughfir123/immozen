@@ -42,10 +42,11 @@ export function Navbar() {
           </a>
 
           <a
-            href={CONTACT.phoneHref}
+            href={CONTACT.whatsappHref}
             className="site-phone site-phone-mobile lg:hidden"
-            aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
+            aria-label={`Contacter ImmoZen Groupe sur WhatsApp au ${CONTACT.phone}`}
           >
+            <WhatsAppIcon />
             <span>{CONTACT.phone}</span>
           </a>
         </div>
@@ -64,11 +65,11 @@ export function Navbar() {
 
         <div className="site-header-actions hidden items-center lg:flex">
           <a
-            href={CONTACT.phoneHref}
+            href={CONTACT.whatsappHref}
             className="site-phone hidden xl:inline-flex"
-            aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
+            aria-label={`Contacter ImmoZen Groupe sur WhatsApp au ${CONTACT.phone}`}
           >
-            <PhoneIcon />
+            <WhatsAppIcon />
             <span>{CONTACT.phone}</span>
           </a>
           <Button onClick={() => openPropertyLeadModal()} size="md">
@@ -136,16 +137,11 @@ export function Navbar() {
   );
 }
 
-function PhoneIcon() {
+function WhatsAppIcon() {
   return (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M6.6 3h3l1.5 4.2-2 1.7a15.5 15.5 0 006 6l1.7-2L21 14.4v3c0 2-1.6 3.6-3.6 3.6C9.4 21 3 14.6 3 6.6 3 4.6 4.6 3 6.6 3z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" className="shrink-0" aria-hidden="true">
+      <path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-1.5-.7-2.5-1.3-3.5-3-.3-.5.3-.4.8-1.4.1-.2 0-.4 0-.5C11 9.6 10.6 8.5 10.4 8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9 1-.9 2.3 0 1.3 1 2.6 1.1 2.8.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.3z" />
+      <path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.5.8 3.2 1.3 5 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.2 15.1 3.7 13.6 3.7 12c0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.7 8.3-8.3 8.3z" />
     </svg>
   );
 }
