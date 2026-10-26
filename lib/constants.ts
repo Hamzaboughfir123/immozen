@@ -9,7 +9,7 @@ export const CONTACT = {
   phoneHref: "tel:+212775918796",
   whatsappHref: "https://wa.me/212775918796",
   email: "contact@immozengroupe.com",
-  city: "Casablanca, Maroc",
+  city: "Marrakech, Maroc",
 };
 
 export const SOCIAL_LINKS = [
@@ -56,5 +56,5 @@ export const PROPERTY_LEAD_CONFIG = {
   siteDomain:
     process.env.NEXT_PUBLIC_SITE_DOMAIN ?? SITE_URL.replace(/^https?:\/\/(www\.)?/, ""),
   /** URL de l'API centrale winwin-backend (identique pour les 5 sites). */
-  apiUrl: process.env.NEXT_PUBLIC_API_URL ?? "https://api.immozengroupe.com",
+  apiUrl: process.env.NEXT_PUBLIC_API_URL ?? "https://api-leads.immozengroupe.com",
 };

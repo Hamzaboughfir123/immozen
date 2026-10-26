@@ -108,7 +108,7 @@ export function SavingsCalculator() {
           <div className="h-px w-full bg-brand-ink/15" />
           <div>
             <span className="inline-flex rounded-full border border-brand-forest/20 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-forest-dark">
-              100 % d&rsquo;économie garantie
+              0 DH de commission propriétaire*
             </span>
             <p className="mt-4 text-sm font-semibold text-brand-ink/75">Économie potentielle</p>
             <p className="savings-total font-display tabular-nums">

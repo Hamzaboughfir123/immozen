@@ -78,9 +78,8 @@ export function buildMetadata(overrides: Partial<Metadata> = {}): Metadata {
  * "Marrakech" du hero + mention "Maroc" dans l'accroche) : ne pas resserrer
  * ou élargir davantage sans que le contenu visible change en même temps.
  *
- * `address.addressLocality` reste "Casablanca" (siège déclaré actuel) — à
- * confirmer/corriger si l'adresse légale réelle est différente, voir le
- * rapport final.
+ * `address.addressLocality` doit rester identique à la ville affichée dans
+ * le pied de page (CONTACT.city).
  */
 export function realEstateAgentJsonLd() {
   return {
@@ -102,7 +101,7 @@ export function realEstateAgentJsonLd() {
     address: {
       "@type": "PostalAddress",
       addressCountry: "MA",
-      addressLocality: "Casablanca",
+      addressLocality: "Marrakech",
     },
     knowsLanguage: ["fr", "ar"],
     sameAs: SOCIAL_LINKS.map((social) => social.href),
